@@ -76,7 +76,13 @@ const initialsInput = document.getElementById("initials");
 const submitButton = document.getElementById("submit");
 const feedbackDiv = document.getElementById("feedback");
 
-// start.addEventListener("click", showQuestion);
+const currentQuestionIndex = 0;
+const secondsLeft = 0;
+const score = 0;
+
+function startQuiz() {}
+
+startButton.addEventListener("click", startQuiz);
 
 // function showQuestion() {
 //   var currentQ = questions[currentQuestionIndex]; //index for questions in array
