@@ -76,9 +76,9 @@ const initialsInput = document.getElementById("initials");
 const submitButton = document.getElementById("submit");
 const feedbackDiv = document.getElementById("feedback");
 
-const currentQuestionIndex = 0;
-const secondsLeft = 0;
-const score = 0;
+var currentQuestionIndex = 0;
+var secondsLeft = 5;
+var score = 0;
 var time;
 
 function startQuiz() {
@@ -89,10 +89,13 @@ function startQuiz() {
   Timer();
 }
 function Timer() {
+  // timer function, will start when start button ends
   time = setInterval(() => {
     secondsLeft--;
     timerElement.textContent = secondsLeft;
     if (secondsLeft <= 0 || currentQuestionIndex >= questions.length) {
+      //if time will be equal to  0 or answered to all questions, quiz will end
+      clearInterval(time);
       End();
     }
   }, 1000);
