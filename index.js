@@ -79,15 +79,30 @@ const feedbackDiv = document.getElementById("feedback");
 const currentQuestionIndex = 0;
 const secondsLeft = 0;
 const score = 0;
+var time;
 
 function startQuiz() {
   //start function what is included in event when clicked the start button
   startScreen.classList.add("hide");
   questionsDiv.classList.remove("hide");
-  nextQuestion();
-  timerElement();
+  NextQ();
+  Timer();
 }
-
+function Timer() {
+  time = setInterval(() => {
+    secondsLeft--;
+    timerElement.textContent = secondsLeft;
+    if (secondsLeft <= 0 || currentQuestionIndex >= questions.length) {
+      End();
+    }
+  }, 1000);
+}
+function NextQ() {
+  if (currentQuestionIndex >= questions.length) {
+    End();
+    return;
+  }
+}
 function End() {
   //end function, is end of the quiz
   questionsDiv.classList.add("hide"); //will hide the section
@@ -107,4 +122,3 @@ startButton.addEventListener("click", startQuiz);
 //     answerButtons.appendChild(button);
 //   });
 // }
-setTime();
