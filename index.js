@@ -80,7 +80,19 @@ const currentQuestionIndex = 0;
 const secondsLeft = 0;
 const score = 0;
 
-function startQuiz() {}
+function startQuiz() {
+  //start function what is included in event when clicked the start button
+  startScreen.classList.add("hide");
+  questionsDiv.classList.remove("hide");
+  nextQuestion();
+  timerElement();
+}
+
+function End() {
+  //end function, is end of the quiz
+  questionsDiv.classList.add("hide"); //will hide the section
+  endScreen.classList.remove("hide"); //will remove the section to be visible
+}
 
 startButton.addEventListener("click", startQuiz);
 
