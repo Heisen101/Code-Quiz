@@ -87,5 +87,14 @@ var start = document.getElementById("start");
 var screen = document.getElementById("start-screen");
 var answerButtons = document.getElementById("choices");
 
-
-function
+var secondsLeft = 60;
+function setTime() {//timer function
+  var interval = setInterval(function () {
+    secondsLeft--;
+    timer.textContent = secondsLeft;
+    if (secondsLeft <= 0) {
+      clearInterval(interval); // Stop the timer when secondsLeft reaches 0
+      
+  }, 1000);
+}
+setTime();
