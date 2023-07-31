@@ -64,35 +64,29 @@ const questions = [
   },
 ];
 
-var timer = document.getElementById("time");
-var start = document.getElementById("start");
-var screen = document.getElementById("start-screen");
-var answerButtons = document.getElementById("choices");
-var questionT = document.getElementById("question-title");
-var secondsLeft = 60;
-var currentQuestionIndex = 0;
-var score = 0;
-function setTime() {
-  //timer function
-  var interval = setInterval(function () {
-    secondsLeft--;
-    timer.textContent = secondsLeft;
-    if (secondsLeft <= 0) {
-      clearInterval(interval); // Stop the timer when secondsLeft reaches 0
-    }
-  }, 1000);
-}
-start.addEventListener("click", showQuestion);
+const timerElement = document.getElementById("time");
+const startButton = document.getElementById("start");
+const startScreen = document.getElementById("start-screen");
+const questionsDiv = document.getElementById("questions");
+const questionTitle = document.getElementById("question-title");
+const answerButtonsDiv = document.getElementById("choices");
+const endScreen = document.getElementById("end-screen");
+const finalScoreElement = document.getElementById("final-score");
+const initialsInput = document.getElementById("initials");
+const submitButton = document.getElementById("submit");
+const feedbackDiv = document.getElementById("feedback");
 
-function showQuestion() {
-  var currentQ = questions[currentQuestionIndex]; //index for questions in array
-  var questionNo = currentQuestionIndex + 1;
-  questionT.innerHTML = questionNo + ". " + currentQ.question;
-  currentQ.answer.forEach((answer) => {
-    const button = document.createElement("button");
-    button.innerHTML = answer.text;
-    button.classList.add("btn");
-    answerButtons.appendChild(button);
-  });
-}
+// start.addEventListener("click", showQuestion);
+
+// function showQuestion() {
+//   var currentQ = questions[currentQuestionIndex]; //index for questions in array
+//   var questionNo = currentQuestionIndex + 1;
+//   questionT.innerHTML = questionNo + ". " + currentQ.question;
+//   currentQ.answer.forEach((answer) => {
+//     const button = document.createElement("button");
+//     button.innerHTML = answer.text;
+//     button.classList.add("btn");
+//     answerButtons.appendChild(button);
+//   });
+// }
 setTime();
