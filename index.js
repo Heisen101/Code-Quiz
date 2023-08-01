@@ -108,7 +108,13 @@ function NextQ() {
   }
   var questionC = questions[currentQuestionIndex]; //stores question index
   questionTitle.textContent = questionC.question; //this will have the qoestion from array
+
+  questionC.answer.array.forEach((answer) => {
+    const createdButton = document.createElement("button");
+    createdButton.textContent = questionC.answer;
+  });
 }
+
 function End() {
   //end function, is end of the quiz
   questionsDiv.classList.add("hide"); //will hide the section
