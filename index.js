@@ -117,6 +117,14 @@ function NextQ() {
   });
 }
 
+function AnswersCheck() {
+  if (answerCorect) {
+    score++;
+    feedbackDiv.textContent = "Corect";
+  }
+  else
+}
+
 function End() {
   //end function, is end of the quiz
   questionsDiv.classList.add("hide"); //will hide the section
