@@ -75,7 +75,7 @@ const finalScoreElement = document.getElementById("final-score");
 const initialsInput = document.getElementById("initials");
 const submitButton = document.getElementById("submit");
 const feedbackDiv = document.getElementById("feedback");
-
+var highScore = document.getElementById("highscore");
 var currentQuestionIndex = 0;
 var secondsLeft = 50;
 var score = 0;
@@ -144,9 +144,14 @@ function End() {
   feedbackDiv.classList.add("hide");
   endScreen.classList.remove("hide"); //will remove the section to be visible
   finalScoreElement.textContent = score + " " + " /100"; //will display the User performance
-  localStorage.setItem("score", score); //store the socre in local storage
-  const initials = initialsInput.value;
-  localStorage.setItem("inilials", initials);
+  var initials = initialsInput.value;
+  localStorage.setItem("score", score);
+  localStorage.setItem("initials", initials);
+  var name = localStorage.getItem("initials", initials);
+  var scorStored = localStorage.getItem("score", score);
+  const li = document.createElement("li");
+  li.textContent = name + scorStored;
+  highScore.appendChild(li);
 }
 
 startButton.addEventListener("click", startQuiz);
