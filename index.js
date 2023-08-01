@@ -109,9 +109,11 @@ function NextQ() {
   var questionC = questions[currentQuestionIndex]; //stores question index
   questionTitle.textContent = questionC.question; //this will have the qoestion from array
 
-  questionC.answer.array.forEach((answer) => {
+  questionC.answer.forEach((answer) => {
     const createdButton = document.createElement("button");
-    createdButton.textContent = questionC.answer;
+    createdButton.textContent = answer.text;
+    createdButton.classList.add("btn"); //added class to be identified as button
+    answerButtonsDiv.appendChild(createdButton);
   });
 }
 
