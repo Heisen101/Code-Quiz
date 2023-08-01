@@ -94,7 +94,7 @@ function Timer() {
     secondsLeft--;
     timerElement.textContent = secondsLeft;
     if (secondsLeft <= 0 || currentQuestionIndex >= questions.length) {
-      //if time will be equal to  0 or answered to all questions, quiz will end
+      //if time will be equal to  0 or User answered to all questions, quiz will end
       clearInterval(time);
       End();
     }
@@ -113,9 +113,9 @@ function NextQ() {
     const createdButton = document.createElement("button");
     createdButton.textContent = answer.text;
     createdButton.classList.add("btn"); //added class to be identified as button
-    answerButtonsDiv.appendChild(createdButton);
+    answerButtonsDiv.appendChild(createdButton); //will create button and append to div with choices ID
     createdButton.addEventListener("click", function () {
-      AnswersCheck(answer.AnswerCorrect);
+      AnswersCheck(answer.correct);
     });
   });
   //   RemoveButtons();
@@ -123,23 +123,25 @@ function NextQ() {
 function RemoveButtons() {
   answerButtonsDiv.innerHTML = ""; // removing buttons after answer checked
 }
-function AnswersCheck(AnswerCorrect) {
+function AnswersCheck(answercorrect) {
   //will verify if the answer is correct or wrong  and reduce timer with 10 sec
-  if (AnswerCorrect) {
-    score++;
+  if (answercorrect) {
+    score += 12;
     feedbackDiv.textContent = "Correct";
   } else {
-    secondsLeft -= 10; //will decrimend the timer if wrong answer
+    secondsLeft -= 10; //will decriment the timer if wrong answer
     feedbackDiv.textContent = "Wrong";
   }
   currentQuestionIndex++;
-  NextQ(); // after anser checked will move to next question
+  NextQ(); // after answer checked will move to next question
 }
 
 function End() {
   //end function, is end of the quiz
   questionsDiv.classList.add("hide"); //will hide the section
+
   endScreen.classList.remove("hide"); //will remove the section to be visible
+  finalScoreElement.textContent = score + " " + " /100"; //will display the User performance
 }
 
 startButton.addEventListener("click", startQuiz);
