@@ -37,17 +37,25 @@ Provide a link to a live demo of the application (if available).
 
 2. Click the "Start Quiz" button to begin.
 
+   ![Firstpic](./assets/Screenshot%202023-08-01%20185527.png)
+
 3. Answer the questions by clicking the corresponding buttons.
 
 4. If you answer incorrectly, 10 seconds will be deducted from the timer.
 
+![SecondPic](./assets/Screenshot%202023-08-01%20185509.png)
+
 5. After completing the quiz or when the timer reaches 0, you will see your final score.
+
+![ThirdPic](./assets/Screenshot%202023-08-01%20185428.png)
 
 6. Enter your initials in the input field and click the "Submit" button to save your highscore.
 
 7. You can view the highscores by clicking the "View Highscores" link or by opening the `highscores.html` file.
 
 8. On the Highscores page, you can see the list of saved highscores.
+
+![FourthPic](./assets/Screenshot%202023-08-01%20185417.png)
 
 9. To clear the highscores, click the "Clear Highscores" button.
 
