@@ -108,7 +108,7 @@ function NextQ() {
   }
   var questionC = questions[currentQuestionIndex]; //stores question index
   questionTitle.textContent = questionC.question; //this will have the qoestion from array
-
+  RemoveButtons();
   questionC.answer.forEach((answer) => {
     const createdButton = document.createElement("button");
     createdButton.textContent = answer.text;
@@ -118,19 +118,22 @@ function NextQ() {
       AnswersCheck(answer.AnswerCorrect);
     });
   });
+  //   RemoveButtons();
 }
-function RemoveButtons() {}
+function RemoveButtons() {
+  answerButtonsDiv.innerHTML = ""; // removing buttons after answer checked
+}
 function AnswersCheck(AnswerCorrect) {
   //will verify if the answer is correct or wrong  and reduce timer with 10 sec
   if (AnswerCorrect) {
     score++;
     feedbackDiv.textContent = "Correct";
   } else {
-    secondsLeft -= 10;
+    secondsLeft -= 10; //will decrimend the timer if wrong answer
     feedbackDiv.textContent = "Wrong";
   }
   currentQuestionIndex++;
-  NextQ();
+  NextQ(); // after anser checked will move to next question
 }
 
 function End() {
