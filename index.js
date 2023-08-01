@@ -77,7 +77,7 @@ const submitButton = document.getElementById("submit");
 const feedbackDiv = document.getElementById("feedback");
 var highScore = document.getElementById("highscore");
 var currentQuestionIndex = 0;
-var secondsLeft = 50;
+var secondsLeft = 60;
 var score = 0;
 var time;
 
