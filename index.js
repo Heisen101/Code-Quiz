@@ -144,6 +144,9 @@ function End() {
   feedbackDiv.classList.add("hide");
   endScreen.classList.remove("hide"); //will remove the section to be visible
   finalScoreElement.textContent = score + " " + " /100"; //will display the User performance
+  localStorage.setItem("score", score); //store the socre in local storage
+  const initials = initialsInput.value;
+  localStorage.setItem("inilials", initials);
 }
 
 startButton.addEventListener("click", startQuiz);
