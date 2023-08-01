@@ -150,8 +150,8 @@ function End() {
   var name = localStorage.getItem("initials", initials);
   var scorStored = localStorage.getItem("score", score);
   const li = document.createElement("li");
-  li.textContent = name + scorStored;
-  highScore.appendChild(li);
+  // li.textContent = name + scorStored;
+  // // highScore.appendChild(li);
 }
 
 startButton.addEventListener("click", startQuiz);
