@@ -127,6 +127,8 @@ function AnswersCheck(answercorrect) {
   //will verify if the answer is correct or wrong  and reduce timer with 10 sec
   if (answercorrect) {
     score += 12;
+    feedbackDiv.classList.remove("hide");
+    // feedbackDiv.classList.add("");
     feedbackDiv.textContent = "Correct";
   } else {
     secondsLeft -= 10; //will decriment the timer if wrong answer
@@ -139,7 +141,7 @@ function AnswersCheck(answercorrect) {
 function End() {
   //end function, is end of the quiz
   questionsDiv.classList.add("hide"); //will hide the section
-
+  feedbackDiv.classList.add("hide");
   endScreen.classList.remove("hide"); //will remove the section to be visible
   finalScoreElement.textContent = score + " " + " /100"; //will display the User performance
 }
