@@ -28,7 +28,7 @@ Provide a link to a live demo of the application (if available).
 
 ## Installation
 
-1. Clone the repository to your local machine:
+1. Clone the [repository](https://github.com/Heisen101/Code-Quiz/blob/main/index.js) to your local machine:
 2. Navigate to the project directory:
 
 ## Usage
