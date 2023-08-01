@@ -119,7 +119,7 @@ function NextQ() {
     });
   });
 }
-
+function RemoveButtons() {}
 function AnswersCheck(AnswerCorrect) {
   //will verify if the answer is correct or wrong  and reduce timer with 10 sec
   if (AnswerCorrect) {
