@@ -101,10 +101,13 @@ function Timer() {
   }, 1000);
 }
 function NextQ() {
+  //next question function,
   if (currentQuestionIndex >= questions.length) {
-    End();
+    End(); //will end if the user answered the last question
     return;
   }
+  var questionC = questions[currentQuestionIndex]; //stores question index
+  questionTitle.textContent = questionC.question; //this will have the qoestion from array
 }
 function End() {
   //end function, is end of the quiz
@@ -113,15 +116,3 @@ function End() {
 }
 
 startButton.addEventListener("click", startQuiz);
-
-// function showQuestion() {
-//   var currentQ = questions[currentQuestionIndex]; //index for questions in array
-//   var questionNo = currentQuestionIndex + 1;
-//   questionT.innerHTML = questionNo + ". " + currentQ.question;
-//   currentQ.answer.forEach((answer) => {
-//     const button = document.createElement("button");
-//     button.innerHTML = answer.text;
-//     button.classList.add("btn");
-//     answerButtons.appendChild(button);
-//   });
-// }
