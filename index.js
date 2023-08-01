@@ -77,7 +77,7 @@ const submitButton = document.getElementById("submit");
 const feedbackDiv = document.getElementById("feedback");
 
 var currentQuestionIndex = 0;
-var secondsLeft = 5;
+var secondsLeft = 50;
 var score = 0;
 var time;
 
@@ -114,15 +114,23 @@ function NextQ() {
     createdButton.textContent = answer.text;
     createdButton.classList.add("btn"); //added class to be identified as button
     answerButtonsDiv.appendChild(createdButton);
+    createdButton.addEventListener("click", function () {
+      AnswersCheck(answer.AnswerCorrect);
+    });
   });
 }
 
-function AnswersCheck() {
-  if (answerCorect) {
+function AnswersCheck(AnswerCorrect) {
+  //will verify if the answer is correct or wrong  and reduce timer with 10 sec
+  if (AnswerCorrect) {
     score++;
-    feedbackDiv.textContent = "Corect";
+    feedbackDiv.textContent = "Correct";
+  } else {
+    secondsLeft -= 10;
+    feedbackDiv.textContent = "Wrong";
   }
-  else
+  currentQuestionIndex++;
+  NextQ();
 }
 
 function End() {
